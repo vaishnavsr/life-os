@@ -22,7 +22,7 @@ Claude will then:
 - ask a few questions: where you're job hunting, your level, and your target roles and industries;
 - build your Notion workspace, with an experience library, a job pipeline board, templates, settings and a how-to page;
 - read 1–3 of your old resumes and turn every achievement into a draft story;
-- build a clean resume template and show it to you;
+- use your own Word resume as the template (or a clean standard layout if you prefer) and show you a sample;
 - set up the background runs: an email check three times on weekdays, drafting twice, and once a day on weekends;
 - start interviewing you about your stories to fill in the gaps.
 

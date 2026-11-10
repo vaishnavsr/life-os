@@ -1,10 +1,17 @@
 {
   "name": "job-search-os",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A job-search operating system on Notion and email: builds your experience library from old resumes and story interviews, drafts a researched resume and cover letter for every job you save, and keeps your application pipeline up to date from your inbox.",
   "author": {
     "name": "Vash"
   },
   "license": "MIT",
-  "keywords": ["job search", "resume", "cover letter", "notion", "career", "interview"]
+  "keywords": [
+    "job search",
+    "resume",
+    "cover letter",
+    "notion",
+    "career",
+    "interview"
+  ]
 }

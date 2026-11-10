@@ -73,10 +73,19 @@ Job Search OS                          (root page)
     "job_boards": ["e.g. Seek", "LinkedIn"]
   },
   "template": {
-    "mode": "builtin",
+    "mode": "own",
+    "map": {
+      "resume": {"template": "TEMPLATE-Resume.docx (file name on the Templates page)",
+                 "prototypes": {"name": 0, "contact": 1, "heading": 2, "body": 3, "label": 5, "bullet": 6,
+                                "role_title": 13, "role_intro": 14, "spacer": 19},
+                 "keep_contact": true, "name_text": null, "spacer_after_role": true},
+      "cover_letter": {"template": "TEMPLATE-Cover_Letter.docx",
+                       "prototypes": {"date": 0, "subject": 2, "salutation": 4, "body": 6, "closing": 15,
+                                      "signature": 17, "blank": 1, "address_table": 0}}
+    },
     "font": "Calibri",
     "accent_hex": "1F3864",
-    "notes": "builtin = use the plugin's build_docs.py; custom = follow the reference script on the Templates page"
+    "notes": "own = the user's Word files refilled with fill_template.py using map; builtin = build_docs.py with font/accent_hex; script = legacy reference script on the Templates page"
   },
   "research": {
     "library_database": {

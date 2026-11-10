@@ -54,11 +54,20 @@ Then collect owner details for the resume header: name, preferred name for signi
   - Convert currencies to theirs and note the original in NOTES.
 - Tell the user how many stories you found and how many questions are waiting. Never invent numbers.
 
-## Stage 4: Resume template
-- Default to **builtin** mode. Build a sample resume from their profile and stories with `../job-application-drafter/scripts/build_docs.py` (see that skill for the JSON format). Use their page size and spelling. Match their old resume's font and accent colour if it has a clear one.
-- Render it to PDF with LibreOffice and show it to them. Ask whether they want any changes to fonts, colours, section names or order. Store the result in Settings `template`.
-- Upload the sample DOCX to the Templates page as a reference.
-- If the user insists on keeping their exact existing Word layout, set `template.mode` to "custom". Upload their DOCX to the Templates page and write a build script that edits it, using python-docx with prototype paragraphs and keeping the contact hyperlinks. Upload the script there too and note in Settings how to use it.
+## Stage 4: Their resume template (their look, not ours)
+Everyone has their own layout preference, so default to the user's own.
+1. Ask: "Do you have a resume layout you like? If so, upload it as a Word file (.docx), plus a cover letter if you have one." Offer three choices:
+   - **Use my own Word resume** (recommended whenever they have a .docx they like);
+   - **Use a clean standard layout** (the builtin builder);
+   - **Match the look of my PDF**: builtin, styled with the PDF's font and accent colour. PDFs can't be edited reliably.
+2. **Own template**:
+   - Run `../job-application-drafter/scripts/analyse_template.py their.docx`. If it warns about tables used for the main layout, text boxes or multiple columns, explain in plain words that this layout can't be refilled reliably. Offer either a builtin layout styled to match, or ask whether they have a simpler single-column version. A small table used only for an address block is fine; use `address_table`.
+   - Choose one example paragraph for each kind: name, contact, heading, body, label, bullet, role_title, role_intro, and spacer if there is one. Use `doc.paragraphs` indices from the analysis; tables don't count in that numbering. Write the map in the format in `fill_template.py`'s docstring.
+   - Test it on their real content: build a full resume from their profile and stories with `fill_template.py`. Render both their original and the result to images and compare them side by side. Fix the map until headings, dates, bullets, fonts and the footer match. The script turns hard-coded "1/3"-style page totals into live page counts.
+   - **Cover letter**: if they uploaded one, map it the same way (date, address or address_table, subject, salutation, body, closing, signature, blank). If not, reuse the resume file as letterhead: set the cover_letter template to the resume file with name, contact and body prototypes from it; other kinds fall back to body.
+   - Upload the template .docx files to the Templates page. Save `template.mode = "own"` and the full map, with each `template` path replaced by the Notion file name, under `template.map` in Settings.
+3. **Builtin or PDF look**: build a sample with `../job-application-drafter/scripts/build_docs.py`, using their page size and, where possible, their old resume's font and accent colour. Show it, adjust the fonts, colours, section names and order they ask for, and save `template.mode = "builtin"` with the style.
+4. Always show the final sample resume and cover letter as PDFs and get a thumbs-up before moving on.
 
 ## Stage 5: Background runs
 If scheduled-task tools exist, offer the standard rhythm in the user's timezone and create the tasks once they confirm:

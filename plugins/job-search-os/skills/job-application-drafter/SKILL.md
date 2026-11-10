@@ -34,14 +34,16 @@ Search Notion for the page "Job Search OS – Settings", fetch it and parse the 
    Attach useful public files (annual report PDFs) to ADD. INFO.
 4. **Pick stories.** Query My Experiences and map the job's requirements to the strongest stories. Prefer recent, quantified and relevant ones. Note in the brief which stories you used.
 5. **Draft.** Write the content, then build the files:
-   - **builtin mode** (`template.mode` = "builtin"): write a content JSON and run `scripts/build_docs.py content.json OUT_DIR`. The format is in the script's docstring. Pass `style` from settings (font, accent_hex, page_size) and the owner contact details. Resume structure:
+   - **own mode** (`template.mode` = "own", the default when the user supplied a Word file): fetch the Templates page with include_file_urls=true. Download the template .docx files straight away, because the URLs expire in minutes. Write `map.json` from `settings.template.map`, setting each `template` path to the downloaded file. Write the content JSON (same format as build_docs.py) and run `scripts/fill_template.py map.json content.json OUT_DIR`. This keeps the user's fonts, spacing, shading and header/footer exactly.
+   - **builtin mode** (`template.mode` = "builtin"): write a content JSON and run `scripts/build_docs.py content.json OUT_DIR` (format in the script's docstring), passing `style` from settings (font, accent_hex, page_size) and the owner contact details.
+   - **script mode** (legacy): download the template and reference build script from the Templates page, adapt the script's content sections and run it.
+   - **Resume content, any mode**:
      - Summary, a 3–4 line positioning statement tailored to the job;
      - Selected impact, 2 bullets with the biggest relevant numbers;
      - Core capabilities, 6–10 phrases echoing the job's language;
      - Professional work history: most recent roles first, 1–4 bullets each, older roles trimmed;
      - Early career, one plain line;
      - Education.
-   - **custom mode**: fetch the Templates page with include_file_urls=true. Download the template DOCX and the reference build script immediately, because the URLs expire in minutes. Adapt the script's content sections and run it.
    - **Cover letter**: five short paragraphs:
      1. why this company, now (use the research);
      2. strategy or functional proof with numbers;
