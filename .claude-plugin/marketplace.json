@@ -1,0 +1,15 @@
+{
+  "name": "job-search-os",
+  "description": "Job Search OS: a Claude plugin that runs your job search on Notion and email.",
+  "owner": {
+    "name": "Vash"
+  },
+  "plugins": [
+    {
+      "name": "job-search-os",
+      "source": "./plugins/job-search-os",
+      "description": "Job-search operating system on Notion and email: experience library, tailored resumes and cover letters, and an auto-updating application pipeline.",
+      "version": "0.1.0"
+    }
+  ]
+}
