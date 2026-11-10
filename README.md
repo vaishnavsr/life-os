@@ -14,7 +14,8 @@ Save a job from your phone, and Claude researches the company, drafts a tailored
 2. Add this plugin. In Claude's plugin settings, add the marketplace `vaishnavsr/job-search-os` (https://github.com/vaishnavsr/job-search-os) and install **job-search-os**. Alternatively, upload the `.plugin` file you were sent. In Claude Code, run:
 
    ```
-   /plugin install job-search-os --marketplace vaishnavsr/job-search-os
+   /plugin marketplace add vaishnavsr/job-search-os
+   /plugin install job-search-os@job-search-os
    ```
 3. Start a new chat and say **"set me up"**.
 
