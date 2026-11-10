@@ -102,9 +102,8 @@ Job Search OS                          (root page)
     "path": "optional folder on the user's computer for copies of finished files"
   },
   "schedule": {
-    "email_check": "weekdays 07:07, 12:07, 18:07",
-    "drafting": "weekdays 07:41, 18:41",
-    "weekend": "Sat/Sun 09:23 (all three)"
+    "default": "weekdays only, once a day at 07:37 (email check, then drafting, then story tidy); no weekend runs",
+    "tasks": [{"name": "Job Search OS daily run", "id": "trig_…", "cron": "CRON_TZ=<timezone> 37 7 * * 1-5"}]
   }
 }
 ```

@@ -71,11 +71,17 @@ Everyone has their own layout preference, so default to the user's own.
 
 ## Stage 5: Background runs (the user chooses)
 Ask how hands-off they want to be, then create exactly what they pick. If scheduled-task tools are missing, skip to the last bullet.
-- **Offer the standard rhythm as a starting point**, in their timezone:
-  - email status check on weekdays at about 7am, 12pm and 6pm;
-  - drafting and story tidy on weekdays at about 7:40am and 6:40pm, with stories tidied on the morning run only;
-  - a weekend run once a day at about 9:20am covering all three.
-- **Let them change any part**: times; frequency (e.g. drafting once a day, or the email check hourly; the minimum interval is usually hourly); days (e.g. weekdays only, or every day); which jobs run automatically (e.g. email tracking only, drafting on demand); or no schedule at all.
+- **Offer the default as a starting point**: one scheduled task, once a day on weekdays only (Monday to Friday, nothing on weekends), at about 7:37am in their timezone. Each run does all three jobs in order:
+  1. the email status check (pipeline-status-tracker);
+  2. drafting everything in the Inbox (job-application-drafter);
+  3. tidying draft stories (story-interviewer, background-tidy mode).
+  That's five runs a week, which fits within plan limits on scheduled runs.
+- **Let them change any part**:
+  - the time;
+  - the days (e.g. adding weekends);
+  - frequency, e.g. a separate email check two or three times a day. The minimum interval is usually hourly, and some plans cap scheduled runs per day, so warn if their choice could exceed that;
+  - which jobs run automatically, e.g. email tracking only, with drafting on demand;
+  - no schedule at all.
 - **Create the tasks**:
   - use minutes off the hour (e.g. :07, :41, :23), and run in the cloud unless their library database or local folder needs their computer;
   - write each prompt as a standalone instruction that names the skill to invoke and states the hard limits (never send email, never submit applications, never type passwords), ending with a SendUserMessage summary;
