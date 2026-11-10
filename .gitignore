@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS clutter
+.DS_Store
+Thumbs.db
+
+# Build and test outputs
+*.plugin
+out/
+*.pdf
+*.jpg
+
+# Never commit personal files
+*.docx
+.env
