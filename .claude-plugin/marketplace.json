@@ -9,7 +9,7 @@
       "name": "job-search-os",
       "source": "./plugins/job-search-os",
       "description": "Job-search operating system on Notion and email: experience library, tailored resumes and cover letters, and an auto-updating application pipeline.",
-      "version": "0.2.0"
+      "version": "0.2.1"
     }
   ]
 }

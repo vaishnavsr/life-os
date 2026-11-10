@@ -1,6 +1,6 @@
 ---
 name: job-search-setup
-description: Sets up Job Search OS for a new user from nothing. Use when the user says "set me up", "set up Job Search OS", "install my job search system", "start my job search", or when another Job Search OS skill can't find the "Job Search OS – Settings" page. Creates the Notion workspace and databases, reads the user's existing resumes into an experience library, builds a resume template, and schedules the background runs.
+description: Sets up Job Search OS for a new user from nothing, and changes it later. Use when the user says "set me up", "set up Job Search OS", "install my job search system", "start my job search", "change my schedule", "change my Job Search OS settings", or when another Job Search OS skill can't find the "Job Search OS – Settings" page. Creates the Notion workspace and databases, reads the user's existing resumes into an experience library, builds a resume template, and schedules the background runs.
 ---
 
 # Job Search OS setup
@@ -69,12 +69,20 @@ Everyone has their own layout preference, so default to the user's own.
 3. **Builtin or PDF look**: build a sample with `../job-application-drafter/scripts/build_docs.py`, using their page size and, where possible, their old resume's font and accent colour. Show it, adjust the fonts, colours, section names and order they ask for, and save `template.mode = "builtin"` with the style.
 4. Always show the final sample resume and cover letter as PDFs and get a thumbs-up before moving on.
 
-## Stage 5: Background runs
-If scheduled-task tools exist, offer the standard rhythm in the user's timezone and create the tasks once they confirm:
-- **Email status check**: weekdays at about 7am, 12pm and 6pm. Runs the pipeline-status-tracker skill.
-- **Drafting and story tidy**: weekdays at about 7:40am and 6:40pm. Runs job-application-drafter for the Inbox; runs story-interviewer background-tidy on the morning run only.
-- **Weekend**: once a day at about 9:20am, running all three.
-Use minutes off the hour (e.g. :07, :41, :23). Run them in the cloud (no local device) unless the user's research database or local folder needs their computer. Write each task's prompt as a standalone instruction that names the skill to invoke, states the hard limits (never send email, never submit applications, never type passwords) and ends with a SendUserMessage summary. Record the schedule in Settings. If no scheduling tools exist, explain that everything works on demand ("process my inbox", "check my email for job updates").
+## Stage 5: Background runs (the user chooses)
+Ask how hands-off they want to be, then create exactly what they pick. If scheduled-task tools are missing, skip to the last bullet.
+- **Offer the standard rhythm as a starting point**, in their timezone:
+  - email status check on weekdays at about 7am, 12pm and 6pm;
+  - drafting and story tidy on weekdays at about 7:40am and 6:40pm, with stories tidied on the morning run only;
+  - a weekend run once a day at about 9:20am covering all three.
+- **Let them change any part**: times; frequency (e.g. drafting once a day, or the email check hourly; the minimum interval is usually hourly); days (e.g. weekdays only, or every day); which jobs run automatically (e.g. email tracking only, drafting on demand); or no schedule at all.
+- **Create the tasks**:
+  - use minutes off the hour (e.g. :07, :41, :23), and run in the cloud unless their library database or local folder needs their computer;
+  - write each prompt as a standalone instruction that names the skill to invoke and states the hard limits (never send email, never submit applications, never type passwords), ending with a SendUserMessage summary;
+  - tell them which approval setting each task got and, if runs will ask for approval, that they can switch the task to automatic approval in its settings.
+- **Record the schedule in Settings**, including each task's ID, so it can be changed later.
+- **Later changes** ("change my schedule", "run drafting once a day", "pause the email check"): list the existing scheduled tasks and update or pause the matching ones. Never create duplicates. Then update the schedule in Settings.
+- **If no scheduling tools exist**, explain that everything works on demand ("process my inbox", "check my email for job updates").
 
 ## Stage 6: Show them how to use it, then start
 Explain in a few short lines:

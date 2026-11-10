@@ -24,7 +24,7 @@ Claude will then:
 - build your Notion workspace, with an experience library, a job pipeline board, templates, settings and a how-to page;
 - read 1–3 of your old resumes and turn every achievement into a draft story;
 - use your own Word resume as the template (or a clean standard layout if you prefer) and show you a sample;
-- set up the background runs: an email check three times on weekdays, drafting twice, and once a day on weekends;
+- set up background runs on a schedule you choose (it suggests an email check three times on weekdays, drafting twice, and once a day on weekends; change any of it, then or later, by saying "change my schedule");
 - start interviewing you about your stories to fill in the gaps.
 
 ## Day to day
