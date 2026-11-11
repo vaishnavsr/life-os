@@ -1,6 +1,6 @@
 ---
 name: job-application-drafter
-description: Researches saved jobs and drafts a tailored resume and cover letter for each. Use when the user says "process my inbox", "draft my new jobs", "do the <employer> job", pastes a job ad URL asking for an application, or on a scheduled Career OS drafting run. Attaches the files in the Notion Job Pipeline and moves the job to 01 - DRAFT.
+description: Researches saved jobs and drafts a tailored resume and cover letter for each. Use when the user says "process my inbox", "draft my new jobs", "do the Canva job (any employer name)", pastes a job ad URL asking for an application, or on a scheduled Career OS drafting run. Attaches the files in the Notion Job Pipeline and moves the job to 01 - DRAFT.
 ---
 
 # Job application drafter

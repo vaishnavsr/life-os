@@ -9,7 +9,7 @@
       "name": "career-os",
       "source": "./plugins/career-os",
       "description": "Career OS: your experience library, job search, application pipeline and (coming) career check-ins, on Notion and email.",
-      "version": "0.3.0"
+      "version": "0.3.1"
     }
   ]
 }

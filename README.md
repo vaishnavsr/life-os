@@ -10,7 +10,7 @@ Claude plugins that run parts of your life on Notion and email. There's one plug
 
 | Plugin | Life area | What it does | Status |
 |---|---|---|---|
-| [**career-os**](plugins/career-os) | Contributions: career, voluntary work, creations | Experience library from old resumes and story interviews; a researched resume and cover letter for every job you save; an application pipeline that updates itself from your inbox | Available (v0.3.0) |
+| [**career-os**](plugins/career-os) | Contributions: career, voluntary work, creations | Experience library from old resumes and story interviews; a researched resume and cover letter for every job you save; an application pipeline that updates itself from your inbox | Available (v0.3.1) |
 
 More areas (health, home, relationships, learning, wealth, legacy) may follow.
 
