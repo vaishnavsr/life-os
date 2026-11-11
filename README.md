@@ -10,7 +10,7 @@ Claude plugins that run parts of your life on Notion and email. There's one plug
 
 | Plugin | Life area | What it does | Status |
 |---|---|---|---|
-| [**career-os**](plugins/career-os) | Contributions: career, voluntary work, creations | Experience library from old resumes and story interviews; a researched resume and cover letter for every job you save; an application pipeline that updates itself from your inbox | Available (v0.3.1) |
+| [**career-os**](plugins/career-os) | Contributions: career, voluntary work, creations | Experience library from old resumes and story interviews; a researched resume and cover letter for every job you save; an application pipeline that updates itself from your inbox; interview prep and debriefs | Available (v0.4.0) |
 
 More areas (health, home, relationships, learning, wealth, legacy) may follow.
 
@@ -25,6 +25,9 @@ More areas (health, home, relationships, learning, wealth, legacy) may follow.
 3. Start a new chat and say **"set me up"**.
 
 See the [Career OS README](plugins/career-os/README.md) for what setup does, the Claude plan you need, and day-to-day use.
+
+## Credits
+Career OS bundles **Interview Coach** by Noam Segal (https://github.com/noamseg/interview-coach-skill) under the MIT licence.
 
 ## Safety by design
 These plugins never send email, never submit applications or forms on your behalf, and never type or store your passwords. Your data stays in your own Notion; nothing personal lives in this repository.

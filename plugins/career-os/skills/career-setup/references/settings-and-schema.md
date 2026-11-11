@@ -116,6 +116,11 @@ If the user already has their own life or career structure in Notion (for exampl
     },
     "extra_sources": []
   },
+  "calendar": {
+    "mode": "interview_and_prep",
+    "prep_minutes": 45,
+    "notes": "interview_and_prep | interview_only | off. Events go on the user's own calendar with no attendees."
+  },
   "local_folder": {
     "enabled": false,
     "path": "optional folder on the user's computer for copies of finished files"

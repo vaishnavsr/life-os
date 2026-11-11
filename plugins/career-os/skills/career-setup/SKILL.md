@@ -19,12 +19,13 @@ Create a task list for the user with these stages, and tick them off as you go.
   - **Scheduling tools** decide whether background runs are possible. Check with ToolSearch for scheduled-task tools.
   - **Browser tools** (Claude in Chrome) are optional, used for logged-in job sites and library databases.
 
-## Stage 1: Preferences (one AskUserQuestion round, at most 4 questions; then free-text follow-ups)
-Ask:
+## Stage 1: Preferences (AskUserQuestion, at most 4 questions per round; then free-text follow-ups)
+Ask (spread over two rounds if needed):
 1. **Where are they job hunting?** This sets country, currency, spelling, page size (A4 or US Letter) and default job boards. Offer the common options; infer timezone from location, or confirm it.
 2. **What level of roles?** E.g. graduate/junior, manager, senior manager/director, executive. This sets the age-bias rule. For manager level and below, never state total years of experience and list early-career roles without years. For clearly senior roles, years of experience may be used.
 3. **Target roles and industries.** Free text; this drives research sources and story selection.
-4. **Library or paid research databases?** E.g. IBISWorld through a state library, or a university database. Optional. Record how they access it (always through their own signed-in browser session; never store their password).
+4. **Calendar**: when an interview invite arrives, should Claude add the interview and a 45-minute prep slot the day before, the interview only, or leave the calendar alone? Events go on their own calendar with no invitations. Only ask if calendar tools are connected; otherwise record "off" and mention they can connect Google Calendar later.
+5. **Library or paid research databases?** E.g. IBISWorld through a state library, or a university database. Optional. Record how they access it (always through their own signed-in browser session; never store their password).
 Then collect owner details for the resume header: name, preferred name for signing letters, phone, city, LinkedIn, website. Read these from their resume in Stage 3 where possible and only ask for what's missing.
 
 ## Stage 2: Build the Notion workspace

@@ -8,6 +8,7 @@ Save a job from your phone, and Claude researches the company, drafts a tailored
 - A **Claude** account. Free works when you ask; automatic runs need Pro or higher (see "Which Claude plan do I need?" below).
 - A **Notion** account (the free plan is fine).
 - A **Gmail** account, used for automatic status tracking.
+- Optional: **Google Calendar**, so interviews and prep slots are added for you.
 
 ## Which Claude plan do I need?
 
@@ -51,17 +52,25 @@ Life OS splits every life area into three parts. Spend about 80% of your effort 
 | Part | What it's for | In Career OS | Status |
 |---|---|---|---|
 | **Check** | Periodic measurement against whole-of-career targets | Aspirations (your why, values and requirements), Achievements (experience library), career check-ins | Achievements available; aspirations and check-ins coming |
-| **Change** | Adjusting course when a check shows you're off track | Discussions (reviews and one-on-ones), Networks, Job Pipeline | Job Pipeline available; interviews, networks and discussions coming |
+| **Change** | Adjusting course when a check shows you're off track | Discussions (reviews and one-on-ones), Networks, Job Pipeline, Interviews | Job Pipeline and interview prep available; networks and discussions coming |
 | **Concentrate** | The everyday work | Profession, Voluntary, Creations | Achievement log coming |
 
 ## Skills in this plugin
 
 | Skill | What it does |
 |---|---|
-| career-setup | One-time setup from nothing; also repairs or changes settings |
+| career-setup | One-time setup from nothing; also changes settings and your schedule |
 | story-interviewer | Interviews you and writes structured stories (background, challenge, actions, outcome) |
 | job-application-drafter | Research, resume and cover letter for every job in the Inbox |
-| pipeline-status-tracker | Reads email and moves jobs through the pipeline |
+| pipeline-status-tracker | Reads email, moves jobs through the pipeline, and adds interviews and prep slots to your calendar |
+| interview-prep | Prepares you for and debriefs each interview, one job at a time, using the interview coach and your own stories |
+| interview-coach | Noam Segal's Interview Coach, bundled with credit (see below) |
+
+## Interview prep and debriefs
+Say "prep for my Canva interview", "mock interview for the Xero role" or "debrief my interview". Claude gives the interview coach only that job's research and your most relevant stories. It saves the coaching progress to an "Interview Coaching" page under that job in Notion, so each job's prep stays separate. For debriefs, chat with Claude, paste a voice-memo transcript, or paste a meeting transcript. Improvements to your stories are offered back to My Experiences, never written without your okay.
+
+## Credits
+The interview coaching is **Interview Coach** by Noam Segal (https://github.com/noamseg/interview-coach-skill), included unmodified under the MIT licence. See `skills/interview-coach/LICENSE` and `UPSTREAM.md`.
 
 ## Safety by design
 - Claude never sends email, never submits applications, and never types or stores your passwords.

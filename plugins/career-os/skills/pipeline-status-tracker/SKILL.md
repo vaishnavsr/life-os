@@ -49,7 +49,18 @@ If no email tools are connected, say so in one line and stop.
    - the URL, if the email has one;
    - the STATUS the email shows;
    - NOTES naming the source email.
-6. **Interviews.** Report interview dates and times in the summary. If calendar tools exist and the user is present, offer to add them; don't add them on unattended runs.
+6. **Interviews and calendar.** Report every interview date and time in the summary. Then follow `settings.calendar.mode`, which defaults to "interview_and_prep" if absent and only applies when calendar tools exist:
+   - **"interview_and_prep"** or **"interview_only"**: when an email gives a confirmed date and time, add an event to the user's own primary calendar.
+     - Title: "Interview – <Employer> (<round type>)", using the email's timezone. Use the length the email gives, or 1 hour if it doesn't.
+     - Location or video link from the email; description with the role, the interviewers' names if given, and the Pipeline entry link.
+     - **No attendees**: never invite anyone and never send anything.
+   - **"interview_and_prep"** also adds a prep block of `settings.calendar.prep_minutes` (default 45) the day before:
+     - First choice: the first free slot between 7pm and 9pm local time. Otherwise between 12pm and 2pm the day before, otherwise the morning of the interview at least 2 hours before it.
+     - Title: "Interview prep – <Employer>". Description: "Open Claude and say: prep for my <Employer> interview", plus the Pipeline link.
+   - **Duplicates and changes**: before creating, search the calendar for an existing "Interview – <Employer>" event within 3 days, and update it if the time changed rather than adding another; move the prep block with it. If an interview is cancelled, delete only the events this skill created, which are identified by their title and the Pipeline link in the description.
+   - **No confirmed time yet** (e.g. a scheduling link or "please share your availability"): don't create anything; flag it in the summary so the user can book it.
+   - **"off"**: summary only.
+   - Note each event you create or change in the job's NOTES.
 7. **Stale check.** Weekly, or when asked, list rows at 02 for more than 45 days with no email activity. Suggest 09 or 12, but only suggest; the user decides.
 8. **Summarise** in full sentences:
    - status changes with reasons;
