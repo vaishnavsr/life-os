@@ -1,6 +1,6 @@
 ---
 name: job-application-drafter
-description: Researches saved jobs and drafts a tailored resume and cover letter for each. Use when the user says "process my inbox", "draft my new jobs", "do the <employer> job", pastes a job ad URL asking for an application, or on a scheduled Job Search OS drafting run. Attaches the files in the Notion Job Pipeline and moves the job to 01 - DRAFT.
+description: Researches saved jobs and drafts a tailored resume and cover letter for each. Use when the user says "process my inbox", "draft my new jobs", "do the <employer> job", pastes a job ad URL asking for an application, or on a scheduled Career OS drafting run. Attaches the files in the Notion Job Pipeline and moves the job to 01 - DRAFT.
 ---
 
 # Job application drafter
@@ -8,7 +8,7 @@ description: Researches saved jobs and drafts a tailored resume and cover letter
 Turn each job the user saved to their Job Pipeline into a researched brief, a tailored resume and a cover letter, ready for them to review and submit.
 
 ## Load settings first
-Search Notion for the page "Job Search OS – Settings", fetch it and parse the JSON block (format: `../job-search-setup/references/settings-and-schema.md`). If it's missing, tell the user to run setup ("set up Job Search OS") and stop. Use from it: the owner details, locale (currency, spelling, page size), notion IDs, writing_rules, age_bias, targets, template, research and local_folder. Re-read the Pipeline STATUS options from the data source.
+Search Notion for the page "Career OS – Settings" (legacy title: "Job Search OS – Settings"), fetch it and parse the JSON block (format: `../career-setup/references/settings-and-schema.md`). If it's missing, tell the user to run setup ("set up Career OS") and stop. Use from it: the owner details, locale (currency, spelling, page size), notion IDs, writing_rules, age_bias, targets, template, research and local_folder. Re-read the Pipeline STATUS options from the data source.
 
 ## Standing rules
 - Follow every entry in `settings.writing_rules`.

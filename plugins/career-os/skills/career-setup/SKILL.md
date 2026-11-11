@@ -1,18 +1,18 @@
 ---
-name: job-search-setup
-description: Sets up Job Search OS for a new user from nothing, and changes it later. Use when the user says "set me up", "set up Job Search OS", "install my job search system", "start my job search", "change my schedule", "change my Job Search OS settings", or when another Job Search OS skill can't find the "Job Search OS – Settings" page. Creates the Notion workspace and databases, reads the user's existing resumes into an experience library, builds a resume template, and schedules the background runs.
+name: career-setup
+description: Sets up Career OS for a new user from nothing, and changes it later. Use when the user says "set me up", "set up Career OS", "install Career OS", "install my job search system", "start my job search", "change my schedule", "change my Career OS settings", or when another Career OS skill can't find the "Career OS – Settings" page. Creates the Notion workspace and databases, reads the user's existing resumes into an experience library, builds a resume template, and schedules the background runs.
 ---
 
-# Job Search OS setup
+# Career OS setup
 
 Take a new user from "I have a Claude account, a Notion account and an email account" to a working job-search system in one guided session. Keep everything in plain language. The user should never see database IDs, JSON or file paths unless they ask.
 
-Read `references/settings-and-schema.md` (in this skill's folder) before starting. It defines the exact workspace, database schemas, statuses and Settings JSON that every other Job Search OS skill depends on.
+Read `references/settings-and-schema.md` (in this skill's folder) before starting. It defines the exact workspace, database schemas, statuses and Settings JSON that every other Career OS skill depends on.
 
 Create a task list for the user with these stages, and tick them off as you go.
 
 ## Stage 0: Check what's already there
-- Search Notion for "Job Search OS – Settings". If it exists, this user is already set up: offer to repair missing pieces or change preferences, rather than creating a duplicate workspace.
+- Search Notion for "Career OS – Settings" (or the legacy "Job Search OS – Settings"). If it exists, this user is already set up: offer to repair missing pieces or change preferences, rather than creating a duplicate workspace.
 - Check the connectors:
   - **Notion** is required. If no Notion tools are available, tell the user to connect Notion in Claude's Settings → Connectors (give Claude access to the whole workspace, or at least a page it can build under), then stop.
   - **Email** is needed for automatic status tracking. Gmail is supported. If no email tools are present, carry on and say status tracking will start once they connect it.
@@ -29,14 +29,14 @@ Then collect owner details for the resume header: name, preferred name for signi
 
 ## Stage 2: Build the Notion workspace
 - Ask where to put it: under a page they name, or as a new top-level page. If they don't mind, create it as a top-level private page.
-- Create, in order:
-  1. root page "Job Search OS";
-  2. the **My Experiences** database, using the schema reference exactly, including property descriptions and seed SKILLS options, with the VALUE ($) number format set to their currency where Notion supports it;
-  3. the **Job Pipeline** database with the 13 statuses in order, plus a board view grouped by STATUS;
-  4. the page "Templates – Resume & Cover Letter";
-  5. the page "How to use Job Search OS";
-  6. the page "Job Search OS – Settings".
-  Use the Notion create-database tool's own description for the exact schema syntax. Fetch each database after creating it to confirm the properties and get its collection:// URL.
+- Also check whether the user already has a life or career structure (e.g. a "My Contribs" page, or Check / Change / Concentrate sections). If so, offer to build inside it and reuse their pages.
+- Otherwise create the **Career OS** page with three callout sections (A. CHECK, B. CHANGE, C. CONCENTRATE), exactly as in the workspace layout in the reference. In order:
+  1. the **My Experiences** database (under Check), using the schema exactly, including property descriptions and seed SKILLS options, with VALUE ($) in their currency where Notion supports it;
+  2. the **Job Pipeline** database (under Change) with the 13 statuses in order and a board view grouped by STATUS;
+  3. under the Job Pipeline page, "Templates – Resume & Cover Letter" and "Career OS – Settings";
+  4. the **Career Check-ins** database (DATE, STATUS: Behind / Risk / Track, RESULTS, ACTIONS) and the placeholder pages Aspirations, Discussions, Networks, Profession, Voluntary and Creations, each with a one-line description of what it will hold;
+  5. "How to use Career OS".
+  Use the Notion create-database tool's own description for the exact schema syntax. Fetch each database after creating it to confirm its properties and get its collection:// URL.
 - Write the Settings JSON with every ID filled in, followed by a plain-language explanation. Re-fetch it and check the JSON parses.
 - Write the "How to use" page using the user guide in `references/user-guide.md`, personalised with their job boards and schedule.
 

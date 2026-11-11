@@ -1,6 +1,6 @@
-# Job Search OS
+# Career OS
 
-A job-search operating system for Claude, Notion and email.
+Part of **Life OS**. Career OS runs your career on Claude, Notion and email.
 
 Save a job from your phone, and Claude researches the company, drafts a tailored resume and cover letter, and files them in Notion. Your application statuses update themselves from your inbox, and your experience library grows through short story interviews.
 
@@ -23,11 +23,11 @@ Save a job from your phone, and Claude researches the company, drafts a tailored
 
 ## Install (5 minutes)
 1. In Claude, open **Settings → Connectors** and connect **Notion** (give it access to your workspace) and **Gmail**.
-2. Add this plugin. In Claude's plugin settings, add the marketplace `vaishnavsr/job-search-os` (https://github.com/vaishnavsr/job-search-os) and install **job-search-os**. Alternatively, upload the `.plugin` file you were sent. In Claude Code, run:
+2. Add the plugin. In Claude's plugin settings, add the marketplace `vaishnavsr/life-os` (https://github.com/vaishnavsr/life-os) and install **career-os**. Alternatively, upload the `.plugin` file you were sent. In Claude Code, run:
 
    ```
-   /plugin marketplace add vaishnavsr/job-search-os
-   /plugin install job-search-os@job-search-os
+   /plugin marketplace add vaishnavsr/life-os
+   /plugin install career-os@life-os
    ```
 3. Start a new chat and say **"set me up"**.
 
@@ -45,11 +45,20 @@ Claude will then:
 - **Statuses update** from your email: screening, interviews, case studies, offers and rejections.
 - **Add stories** any time by saying "let's add a story", or by pasting a voice-memo transcript.
 
+## How Career OS is organised: Check, Change, Concentrate
+Life OS splits every life area into three parts. Spend about 80% of your effort on **Concentrate**, the everyday work, and about 20% on **Check** and **Change**.
+
+| Part | What it's for | In Career OS | Status |
+|---|---|---|---|
+| **Check** | Periodic measurement against whole-of-career targets | Aspirations (your why, values and requirements), Achievements (experience library), career check-ins | Achievements available; aspirations and check-ins coming |
+| **Change** | Adjusting course when a check shows you're off track | Discussions (reviews and one-on-ones), Networks, Job Pipeline | Job Pipeline available; interviews, networks and discussions coming |
+| **Concentrate** | The everyday work | Profession, Voluntary, Creations | Achievement log coming |
+
 ## Skills in this plugin
 
 | Skill | What it does |
 |---|---|
-| job-search-setup | One-time setup from nothing; also repairs or changes settings |
+| career-setup | One-time setup from nothing; also repairs or changes settings |
 | story-interviewer | Interviews you and writes structured stories (background, challenge, actions, outcome) |
 | job-application-drafter | Research, resume and cover letter for every job in the Inbox |
 | pipeline-status-tracker | Reads email and moves jobs through the pipeline |

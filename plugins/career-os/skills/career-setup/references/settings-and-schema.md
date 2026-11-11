@@ -1,25 +1,37 @@
-# Job Search OS: Notion structure, schemas and settings
+# Career OS: Notion structure, schemas and settings
 
-Every Job Search OS skill depends on this file. It defines the Notion workspace that setup creates and the Settings page that every other skill reads.
+Every Career OS skill depends on this file. It defines the Notion workspace that setup creates and the Settings page that every other skill reads.
 
 ## Workspace layout
 
-Setup creates one top-level page and four children:
+Career OS follows the Life OS pattern: **Check** (periodic measurement), **Change** (adjusting course) and **Concentrate** (everyday work). Setup creates one top-level page laid out in those three sections. Sections marked *(placeholder)* are created as simple pages with a one-line description of what they will hold; later Career OS skills fill them in.
 
 ```
-Job Search OS                          (root page)
-├── Job Search OS – Settings           (page: JSON settings block + human notes)
-├── My Experiences                     (database)
-├── Job Pipeline                       (database, board view grouped by STATUS)
-├── Templates – Resume & Cover Letter  (page: base .docx files, optional custom build script)
-└── How to use Job Search OS           (page: plain-language guide for the user)
+Career OS                                   (root page, three callout sections)
+├── A. CHECK
+│   ├── Career Check-ins                    (database: DATE, STATUS Behind/Risk/Track, RESULTS, ACTIONS) (placeholder)
+│   ├── Aspirations                         (page: values, requirements, career direction) (placeholder)
+│   └── My Experiences                      (database, the experience library)
+├── B. CHANGE
+│   ├── Discussions                         (page: performance reviews and one-on-ones) (placeholder)
+│   ├── Networks                            (page: people to keep in touch with) (placeholder)
+│   └── Job Pipeline                        (database, board view grouped by STATUS)
+│       ├── Templates – Resume & Cover Letter  (page: base .docx files, optional build script)
+│       └── Career OS – Settings            (page: JSON settings block + plain-language notes)
+├── C. CONCENTRATE
+│   ├── Profession                          (page: one sub-page per job, with links to document folders) (placeholder)
+│   ├── Voluntary                           (page) (placeholder)
+│   └── Creations                           (page: drafts and master copies; published work lives on the web) (placeholder)
+└── How to use Career OS                    (page: plain-language guide for the user)
 ```
+
+If the user already has their own life or career structure in Notion (for example a "My Contribs" page with Check, Change and Concentrate sections), build inside it instead: reuse their existing pages and record the IDs in Settings. Never create a parallel structure.
 
 ## How skills find the settings
 
-1. Search Notion for the page titled exactly **"Job Search OS – Settings"**. If several pages match, prefer the one whose parent is "Job Search OS".
+1. Search Notion for the page titled exactly **"Career OS – Settings"**. If it isn't found, also try the legacy title "Job Search OS – Settings". If several pages match, prefer the one under the Job Pipeline or Career OS page.
 2. Fetch it and parse the first JSON code block. That object is `settings`.
-3. If no page is found, stop and tell the user to say "set up Job Search OS" first. Never guess IDs.
+3. If no page is found, stop and tell the user to say "set up Career OS" first. Never guess IDs.
 4. Re-read the Pipeline STATUS options from the data source on every run, because users rename them. Treat the settings `statuses` list as the intended meaning, matched by number prefix (00, 01, …).
 
 ## Settings JSON
@@ -50,7 +62,14 @@ Job Search OS                          (root page)
     "settings_page_id": "",
     "experiences_data_source": "collection://…",
     "pipeline_data_source": "collection://…",
-    "templates_page_id": ""
+    "templates_page_id": "",
+    "checkins_data_source": "optional collection://…",
+    "aspirations_page_id": "optional",
+    "discussions_page_id": "optional",
+    "networks_page_id": "optional",
+    "profession_page_id": "optional",
+    "voluntary_page_id": "optional",
+    "creations_page_id": "optional"
   },
   "statuses": [
     "00 - INBOX", "01 - DRAFT", "02 - SUBMITTED", "03 - INT SCREEN", "04 - INT FIT",
@@ -103,7 +122,7 @@ Job Search OS                          (root page)
   },
   "schedule": {
     "default": "weekdays only, once a day at 07:37 (email check, then drafting, then story tidy); no weekend runs",
-    "tasks": [{"name": "Job Search OS daily run", "id": "trig_…", "cron": "CRON_TZ=<timezone> 37 7 * * 1-5"}]
+    "tasks": [{"name": "Career OS daily run", "id": "trig_…", "cron": "CRON_TZ=<timezone> 37 7 * * 1-5"}]
   }
 }
 ```

@@ -1,6 +1,6 @@
 ---
 name: story-interviewer
-description: Builds the Job Search OS experience library. Use when the user wants to add, tell, record or finish a career story or achievement ("let's add a story", "I want to talk about the X project", "finish my draft stories"), pastes a story transcript or voice-memo text, or on a scheduled Job Search OS story-tidy run. Interviews the user and writes structured entries to the My Experiences database in Notion.
+description: Builds the Career OS experience library. Use when the user wants to add, tell, record or finish a career story or achievement ("let's add a story", "I want to talk about the X project", "finish my draft stories"), pastes a story transcript or voice-memo text, or on a scheduled Career OS story-tidy run. Interviews the user and writes structured entries to the My Experiences database in Notion.
 ---
 
 # Story interviewer
@@ -8,7 +8,7 @@ description: Builds the Job Search OS experience library. Use when the user want
 Turn the user's spoken or written career stories into complete, consistent entries in **My Experiences**. These entries feed every resume, cover letter and interview answer, so accuracy matters more than speed.
 
 ## Load settings first
-Search Notion for "Job Search OS – Settings", fetch it and parse the JSON block (format: `../job-search-setup/references/settings-and-schema.md`). If it's missing, tell the user to run setup and stop. Use `notion.experiences_data_source`, `owner.preferred_name`, `locale` (currency, spelling) and `writing_rules`. Re-read the database schema at the start, because users add options.
+Search Notion for "Career OS – Settings" (legacy title: "Job Search OS – Settings"), fetch it and parse the JSON block (format: `../career-setup/references/settings-and-schema.md`). If it's missing, tell the user to run setup and stop. Use `notion.experiences_data_source`, `owner.preferred_name`, `locale` (currency, spelling) and `writing_rules`. Re-read the database schema at the start, because users add options.
 
 ## Pick the mode from what the user says (never ask them to name a mode)
 

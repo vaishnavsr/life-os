@@ -1,15 +1,15 @@
 {
-  "name": "job-search-os",
-  "description": "Job Search OS: a Claude plugin that runs your job search on Notion and email.",
+  "name": "life-os",
+  "description": "Life OS: Claude plugins that run parts of your life on Notion and email, one plugin per life area.",
   "owner": {
     "name": "Vash"
   },
   "plugins": [
     {
-      "name": "job-search-os",
-      "source": "./plugins/job-search-os",
-      "description": "Job-search operating system on Notion and email: experience library, tailored resumes and cover letters, and an auto-updating application pipeline.",
-      "version": "0.2.2"
+      "name": "career-os",
+      "source": "./plugins/career-os",
+      "description": "Career OS: your experience library, job search, application pipeline and (coming) career check-ins, on Notion and email.",
+      "version": "0.3.0"
     }
   ]
 }

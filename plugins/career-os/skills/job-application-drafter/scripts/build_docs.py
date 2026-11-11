@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Job Search OS document builder.
+"""Career OS document builder.
 
 Builds a resume and/or cover letter .docx from a JSON content file, using a
 clean, ATS-friendly layout. Convert to PDF afterwards with LibreOffice.

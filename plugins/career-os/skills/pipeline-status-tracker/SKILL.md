@@ -1,6 +1,6 @@
 ---
 name: pipeline-status-tracker
-description: Keeps the Job Search OS pipeline in step with the user's email. Use when the user says "check my email for job updates", "update my pipeline", "any news on my applications?", or on a scheduled Job Search OS email run. Reads application confirmations, interview invites, offers, rejections and withdrawals, then updates job statuses in Notion.
+description: Keeps the Career OS pipeline in step with the user's email. Use when the user says "check my email for job updates", "update my pipeline", "any news on my applications?", or on a scheduled Career OS email run. Reads application confirmations, interview invites, offers, rejections and withdrawals, then updates job statuses in Notion.
 ---
 
 # Pipeline status tracker
@@ -8,7 +8,7 @@ description: Keeps the Job Search OS pipeline in step with the user's email. Use
 Keep the Job Pipeline in Notion in step with the user's email. This skill is read-only on email and writes only to the Pipeline.
 
 ## Load settings first
-Search Notion for "Job Search OS – Settings", fetch it and parse the JSON block (format: `../job-search-setup/references/settings-and-schema.md`). If it's missing, tell the user to run setup and stop. Use `notion.pipeline_data_source`, `statuses`, `owner.email` and `locale.timezone`. Re-read the STATUS options from the data source every run, and match statuses by their number prefix.
+Search Notion for "Career OS – Settings" (legacy title: "Job Search OS – Settings"), fetch it and parse the JSON block (format: `../career-setup/references/settings-and-schema.md`). If it's missing, tell the user to run setup and stop. Use `notion.pipeline_data_source`, `statuses`, `owner.email` and `locale.timezone`. Re-read the STATUS options from the data source every run, and match statuses by their number prefix.
 
 If no email tools are connected, say so in one line and stop.
 

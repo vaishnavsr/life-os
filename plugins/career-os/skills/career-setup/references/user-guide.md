@@ -1,4 +1,4 @@
-# How to use Job Search OS (content for the user's Notion "How to use" page)
+# How to use Career OS (content for the user's Notion "How to use" page)
 
 Personalise the bracketed parts. Write it in the user's spelling.
 
@@ -27,7 +27,7 @@ Good applications come from good stories. Any time, open Claude and say **"let's
 - "check my email for job updates"
 - "let's add a story" / "finish my draft stories"
 - "add [library database] research to the [company] job" (when you're at your computer and signed in)
-- "change my Job Search OS settings"
+- "change my Career OS settings"
 
 ## Settings
-Your preferences (currency, page size, writing rules, schedule) live on the **Job Search OS – Settings** page. You can edit them, or ask Claude to.
+Your preferences (currency, page size, writing rules, schedule) live on the **Career OS – Settings** page. You can edit them, or ask Claude to.

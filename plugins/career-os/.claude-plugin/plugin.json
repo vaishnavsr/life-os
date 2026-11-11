@@ -1,0 +1,10 @@
+{
+  "name": "career-os",
+  "version": "0.3.0",
+  "description": "Career OS, part of Life OS: builds your experience library from old resumes and story interviews, drafts a researched resume and cover letter for every job you save, and keeps your application pipeline up to date from your inbox. Organised as Check, Change and Concentrate.",
+  "author": {
+    "name": "Vash"
+  },
+  "license": "MIT",
+  "keywords": ["career", "job search", "resume", "cover letter", "notion", "life os"]
+}
