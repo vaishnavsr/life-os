@@ -29,6 +29,9 @@ See the [Career OS README](plugins/career-os/README.md) for what setup does, the
 ## Credits
 Career OS bundles **Interview Coach** by Noam Segal (https://github.com/noamseg/interview-coach-skill) under the MIT licence.
 
+## Changes
+See the [changelog](CHANGELOG.md) for what was added, changed or removed in each version.
+
 ## Safety by design
 These plugins never send email, never submit applications or forms on your behalf, and never type or store your passwords. Your data stays in your own Notion; nothing personal lives in this repository.
 

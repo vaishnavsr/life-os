@@ -72,6 +72,9 @@ Say "prep for my Canva interview", "mock interview for the Xero role" or "debrie
 ## Credits
 The interview coaching is **Interview Coach** by Noam Segal (https://github.com/noamseg/interview-coach-skill), included unmodified under the MIT licence. See `skills/interview-coach/LICENSE` and `UPSTREAM.md`.
 
+## Changes
+See the [changelog](CHANGELOG.md) for what was added, changed or removed in each version.
+
 ## Safety by design
 - Claude never sends email, never submits applications, and never types or stores your passwords.
 - Library databases (like IBISWorld through a state library) are used only through your own signed-in browser session.
